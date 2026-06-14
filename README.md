@@ -2,7 +2,7 @@
 
 A Machine Learning-powered web application that predicts whether a telecom customer is likely to churn (leave the company) based on customer demographics, account information, and service usage patterns.
 
-Built using **Python, Scikit-Learn, Streamlit, and Plotly**.
+Built using **Python**, **Scikit-Learn**, **Streamlit**, and **Plotly**.
 
 ---
 
@@ -16,112 +16,113 @@ This project uses the **IBM Telco Customer Churn Dataset** and a **Random Forest
 
 ## 🎯 Objectives
 
-* Predict customer churn using Machine Learning
-* Identify key factors influencing churn
-* Visualize customer risk through an interactive dashboard
-* Help businesses improve customer retention strategies
+- Predict customer churn using Machine Learning
+- Analyze important factors affecting churn
+- Provide an interactive dashboard for business insights
+- Visualize churn probability and customer risk levels
 
 ---
 
 ## 🛠️ Technologies Used
 
-* Python
-* Pandas
-* NumPy
-* Scikit-Learn
-* Streamlit
-* Plotly
-* Joblib
+- Python
+- Pandas
+- NumPy
+- Scikit-Learn
+- Streamlit
+- Plotly
+- Joblib
 
 ---
 
 ## 📂 Dataset
 
-**Dataset:** IBM Telco Customer Churn Dataset
+Dataset Used:
 
-**Total Records:** 7043 Customers
+**IBM Telco Customer Churn Dataset**
 
-**Features Used:** 30
+Dataset contains:
 
-The dataset contains information such as:
-
-* Gender
-* Senior Citizen Status
-* Partner Status
-* Dependents
-* Tenure
-* Contract Type
-* Monthly Charges
-* Total Charges
-* Internet Services
-* Payment Method
-* Churn Status
+- 7043 customer records
+- 30 engineered features
+- Customer demographics
+- Account information
+- Service subscriptions
+- Churn status
 
 ---
 
 ## 🤖 Machine Learning Model
 
-### Algorithm
+Algorithm Used:
 
-Random Forest Classifier
+**Random Forest Classifier**
 
-### Why Random Forest?
+### Model Performance
 
-* Handles categorical and numerical data effectively
-* Reduces overfitting
-* Provides feature importance scores
-* Delivers strong performance on classification tasks
-
----
-
-## 📈 Model Performance
-
-| Metric           | Value  |
-| ---------------- | ------ |
-| Accuracy         | 80.20% |
-| Training Samples | 5634   |
-| Testing Samples  | 1409   |
-| Features         | 30     |
-
-### Classification Report
-
-| Class    | Precision | Recall | F1-Score |
-| -------- | --------- | ------ | -------- |
-| No Churn | 0.84      | 0.90   | 0.87     |
-| Churn    | 0.66      | 0.52   | 0.58     |
+| Metric | Value |
+|----------|----------|
+| Accuracy | 80.20% |
+| Dataset Size | 7043 Records |
+| Features | 30 |
+| Test Size | 20% |
 
 ---
 
-## 🔥 Top Features Affecting Churn
+## 📈 Top Factors Affecting Churn
+
+According to the trained model:
 
 1. Tenure
 2. Total Charges
 3. Monthly Charges
 4. Internet Service (Fiber Optic)
-5. Electronic Check Payment Method
+5. Payment Method
 6. Contract Type
 7. Online Security
-8. Technical Support
+8. Tech Support
 9. Paperless Billing
-10. Partner Status
+10. Gender
 
 ---
 
-## 📊 Dashboard Features
+## ✨ Features
 
 ✅ Customer Churn Prediction
+
+✅ Risk Assessment Meter
 
 ✅ Churn Probability Score
 
 ✅ Stay Probability Score
 
-✅ Risk Meter
-
-✅ Interactive Pie Chart
+✅ Interactive Dashboard
 
 ✅ Feature Importance Visualization
 
-✅ Customer Summary Table
+✅ Customer Summary Analytics
+
+✅ Professional UI using Streamlit
+
+---
+
+## 📸 Screenshots
+
+### Dashboard Overview
+
+![Dashboard](images/dashboard1.png)
+
+### Prediction Results
+
+![Prediction](images/dashboard2.png)
+
+### Analytics Dashboard
+
+![Analytics](images/dashboard3.png)
+
+### Risk Assessment
+
+![Risk Assessment](images/dashboard4.png)
 
 ---
 
@@ -129,10 +130,6 @@ Random Forest Classifier
 
 ```text
 customer-churn-prediction/
-│
-├── app.py
-├── train.py
-├── requirements.txt
 │
 ├── data/
 │   └── WA_Fn-UseC_-Telco-Customer-Churn.csv
@@ -142,26 +139,56 @@ customer-churn-prediction/
 │   ├── feature_columns.pkl
 │   └── feature_importance.csv
 │
+├── images/
+│   ├── dashboard1.png
+│   ├── dashboard2.png
+│   ├── dashboard3.png
+│   └── dashboard4.png
+│
+├── app.py
+├── train.py
+├── requirements.txt
+├── README.md
 └── .gitignore
 ```
 
+---
+
 ## ⚙️ Installation
 
-### Clone Repository
+Clone the repository:
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/customer-churn-prediction.git
+git clone https://github.com/kotankartaran/customer-churn-prediction.git
+```
+
+Move into project folder:
+
+```bash
 cd customer-churn-prediction
 ```
 
-### Create Virtual Environment
+Create virtual environment:
 
 ```bash
-python3 -m venv venv
+python -m venv venv
+```
+
+Activate virtual environment:
+
+### macOS/Linux
+
+```bash
 source venv/bin/activate
 ```
 
-### Install Dependencies
+### Windows
+
+```bash
+venv\Scripts\activate
+```
+
+Install dependencies:
 
 ```bash
 pip install -r requirements.txt
@@ -169,21 +196,29 @@ pip install -r requirements.txt
 
 ---
 
-## ▶️ Run Training
+## ▶️ Train the Model
 
 ```bash
 python train.py
 ```
 
+Output:
+
+```text
+Model Accuracy: 80.20%
+Model saved successfully!
+Feature importance saved!
+```
+
 ---
 
-## 🌐 Run Dashboard
+## ▶️ Run the Dashboard
 
 ```bash
 streamlit run app.py
 ```
 
-Open:
+Application will start at:
 
 ```text
 http://localhost:8501
@@ -191,26 +226,28 @@ http://localhost:8501
 
 ---
 
-## 📸 Sample Dashboard
+## 📊 Dashboard Features
 
-Features included:
+The dashboard allows users to:
 
-* Churn Prediction
-* Risk Analysis
-* Probability Visualization
-* Feature Importance Chart
-* Customer Analytics Dashboard
+- Enter customer details
+- Predict churn probability
+- View risk level
+- Visualize prediction distribution
+- Analyze important features
+- Review customer summary
 
 ---
 
-## 📚 Future Improvements
+## 🔮 Future Improvements
 
-* Hyperparameter Tuning
-* XGBoost / LightGBM Models
-* Customer Segmentation
-* Model Deployment on Cloud
-* Real-time Predictions
-* User Authentication
+- XGBoost Implementation
+- Hyperparameter Tuning
+- Deep Learning Models
+- Customer Segmentation
+- Deployment on Streamlit Cloud
+- Real-Time Database Integration
+- Explainable AI (SHAP)
 
 ---
 
@@ -218,10 +255,13 @@ Features included:
 
 **Taran Kotankar**
 
-
+GitHub:
+https://github.com/kotankartaran
 
 ---
 
-## 📜 License
+## ⭐ Support
 
-This project is created for educational and learning purposes.
+If you found this project useful, please consider giving it a ⭐ on GitHub.
+
+It helps others discover the project and motivates further improvements.
